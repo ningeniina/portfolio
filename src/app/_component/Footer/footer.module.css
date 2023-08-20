@@ -1,0 +1,26 @@
+.footer {
+  padding: 24px 32px;
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+  justify-content: center;
+  align-items: center;
+  margin-top: auto;
+  background-color: var(--headLine);
+}
+
+.footerLink a {
+  transition: 0.25s;
+  opacity: 1;
+  color: var(--white);
+}
+
+.footerLink a:hover {
+  opacity: 0.7;
+}
+
+.copyright {
+  color: var(--white);
+  font-size: 12px;
+  opacity: 0.7;
+}
