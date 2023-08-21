@@ -37,7 +37,7 @@ export default function Header() {
               fill="#272343"
             />
           </svg>
-          ningeniina
+          portfolio
         </Link>
         <Menu />
       </div>
