@@ -7,7 +7,7 @@ export default function Footer() {
       {/*<div className={style.footerLink}>
         <Link href="/">プライバシーポリシー</Link>
   </div>*/}
-      <small className={style.copyright}>&copy; 2023 ningeniina</small>
+      <small className={style.copyright}>&copy; 2023 Tomoe Suzuki</small>
     </footer>
   );
 }
