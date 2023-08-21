@@ -20,16 +20,28 @@ const Menu = () => {
   };
 
   useEffect(() => {
+    const handleResize = () => {
+      if (window.innerWidth >= 768) {
+        setMenuIsOpen(false);
+        document.body.style.overflowY = "auto";
+      } else {
+      }
+    };
     document.body.style.overflow = "auto";
     setMenuIsOpen(false); //ページ遷移を行う度にメニューを閉じる
+
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, [pathname]);
 
   return (
     <div>
       <ul className={`${styles.menuList} ${menuIsOpen ? styles.menuOpen : ""}`}>
-        <li className={styles.menuListButton}>
+        {/*<li className={styles.menuListButton}>
           <Link href="/">Profile</Link>
-        </li>
+  </li>*/}
         <li className={styles.menuListButton}>
           <Link href="/">Blog</Link>
         </li>

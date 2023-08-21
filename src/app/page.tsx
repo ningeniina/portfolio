@@ -41,12 +41,14 @@ export default function Home() {
               </div>
               <div className={styles.aboutText}>
                 <h3>React</h3>
-                <p className={styles.topText}>useState / useEffect</p>
+                <p className={styles.topText}>
+                  useState / useEffect / React Hook Form
+                </p>
               </div>
               <div className={styles.aboutText}>
                 <h3>Next</h3>
                 <p className={styles.topText}>
-                  usePathname(next/navigation) / Link(next/link)
+                  usePathname,useRouter(next/navigation) / Link(next/link)
                 </p>
               </div>
             </div>

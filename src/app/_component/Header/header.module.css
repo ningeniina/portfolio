@@ -84,7 +84,7 @@
   padding: 120px 40px;
   display: flex;
   flex-flow: column;
-  gap: 24px;
+  gap: 40px;
   background-color: var(--white);
   opacity: 0;
   visibility: hidden;
@@ -115,6 +115,7 @@
 
   .menuList {
     display: flex;
+    gap: 24px;
     flex-flow: wrap;
     padding: 0;
     width: auto;

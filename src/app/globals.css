@@ -7,6 +7,8 @@
   --headLine: #272343;
   --back: #e3f6f5;
   --white: #fffffe;
+  --yellow-hover: #fff412;
+  --text-hover: #484c5c;
 }
 /*/// 全体 ///*/
 * {
@@ -49,6 +51,7 @@ h3 {
 
 p {
   font-size: 14px;
+  line-height: 20px;
 }
 
 a {
@@ -87,5 +90,6 @@ img {
   }
   p {
     font-size: 16px;
+    line-height: 24px;
   }
 }

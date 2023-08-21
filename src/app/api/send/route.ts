@@ -1,17 +1,11 @@
 import mail from "@sendgrid/mail";
-import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
 mail.setApiKey(process.env.SEND_API_KEY || "");
 
-type ResponseData = {
-  status?: string;
-  message?: string;
-};
-
-export async function POST(request: NextRequest) {
+export async function POST(request: Request) {
+  let status;
   const body = await request.json();
-
   const data = {
     to: body.email,
     from: {
@@ -42,16 +36,14 @@ export async function POST(request: NextRequest) {
       "</p>",
   };
 
-  (async () => {
-    try {
-      await mail.send(data);
-      await mail.send(adminMsg);
-      return NextResponse.json({ msg: "Success" }, { status: 200 });
-    } catch (error: any) {
-      return NextResponse.json(
-        { error: "Internal Server Error" },
-        { status: 500 }
-      );
-    }
-  })();
+  await mail.send(adminMsg);
+  await mail
+    .send(data)
+    .then(() => {
+      status = 200;
+    })
+    .catch((error) => {
+      status = 500;
+    });
+  return NextResponse.json({ message: "Success" }, { status: status });
 }

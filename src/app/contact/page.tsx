@@ -2,6 +2,7 @@
 import { useState } from "react";
 import InputForm from "@/app/_component/contact/InputForm";
 import ConfirmPage from "@/app/_component/contact/ConfirmPage";
+import styles from "@/app/_component/contact/contact.module.css";
 
 interface FormData {
   name: string;
@@ -31,14 +32,14 @@ export default function Home() {
   };
 
   return (
-    <>
-      <div style={{ maxWidth: "1032px", margin: "80px auto" }}>
+    <section className={styles.contact}>
+      <div className={styles.contactPage}>
         {confirm ? (
           <ConfirmPage formData={formData} onBack={handleBack} />
         ) : (
           <InputForm onFormSubmit={handleFormSubmit} formData={formData} />
         )}
       </div>
-    </>
+    </section>
   );
 }

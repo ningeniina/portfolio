@@ -1,5 +1,7 @@
 "use client";
 import { useForm } from "react-hook-form";
+import Headline from "@/app/_component/element/HeadLine";
+import styles from "@/app/_component/contact/contact.module.css";
 
 interface FormData {
   name: string;
@@ -23,57 +25,66 @@ const InputForm: React.FC<{
 
   return (
     <>
-      <h1>入力フォーム</h1>
-      <form onSubmit={handleSubmit(handleFormSubmit)} noValidate>
-        <div>
-          <label htmlFor="firstName">
-            名前:
+      <Headline text="Contact" subText="お問い合わせフォーム" />
+      <form
+        onSubmit={handleSubmit(handleFormSubmit)}
+        className={styles.inputForm}
+        noValidate
+      >
+        <div className={styles.formContents}>
+          <label className={styles.label} htmlFor="firstName">
+            名前
             {errors.name && (
-              <span style={{ color: "red" }}>{errors.name.message}</span>
+              <span className={styles.errorText}>{errors.name.message}</span>
             )}
           </label>
           <input
+            className={styles.inputStyle}
             type="text"
             placeholder=""
             defaultValue={formData.name}
-            {...register("name", { required: "入力必須項目です。" })}
+            {...register("name", { required: "※入力必須項目です。" })}
           />
         </div>
-        <div>
-          <label htmlFor="email">
-            メール:
+        <div className={styles.formContents}>
+          <label className={styles.label} htmlFor="email">
+            メール
             {errors.email && (
-              <span style={{ color: "red" }}>{errors.email.message}</span>
+              <span className={styles.errorText}>{errors.email.message}</span>
             )}
           </label>
           <input
+            className={styles.inputStyle}
             type="email"
             placeholder=""
             defaultValue={formData.email}
             {...register("email", {
-              required: "入力必須項目です。",
+              required: "※入力必須項目です。",
               pattern: {
                 value:
                   /^[a-zA-Z0-9_+-]+(\.[a-zA-Z0-9_+-]+)*@([a-zA-Z0-9][a-zA-Z0-9-]*[a-zA-Z0-9]*\.)+[a-zA-Z]{2,}$/,
-                message: "メールアドレスの形式を確認してください。",
+                message: "※メールアドレスの形式を確認してください。",
               },
             })}
           />
         </div>
-        <div>
-          <label htmlFor="message">
-            詳細:
+        <div className={styles.formContents}>
+          <label className={styles.label} htmlFor="message">
+            詳細
             {errors.message && (
-              <span style={{ color: "red" }}>{errors.message.message}</span>
+              <span className={styles.errorText}>{errors.message.message}</span>
             )}
           </label>
           <textarea
+            className={`${styles.inputStyle} ${styles.message}`}
             placeholder=""
             defaultValue={formData.message}
-            {...register("message", { required: "入力必須項目です。" })}
+            {...register("message", { required: "※入力必須項目です。" })}
           />
         </div>
-        <button type="submit">確認する</button>
+        <button type="submit" className={styles.buttonBase}>
+          確認する
+        </button>
       </form>
     </>
   );

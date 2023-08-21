@@ -1,5 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
+import Headline from "@/app/_component/element/HeadLine";
+import styles from "@/app/_component/contact/contact.module.css";
 
 interface FormData {
   name: string;
@@ -17,9 +19,6 @@ const ConfirmPage: React.FC<{
 
     const res = await fetch("/api/send", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
       body: JSON.stringify(formData),
     });
     if (res.status === 200) {
@@ -31,13 +30,28 @@ const ConfirmPage: React.FC<{
 
   return (
     <>
-      <h1>確認ページ</h1>
-      <p>名前: {formData.name}</p>
-      <p>メール: {formData.email}</p>
-      <p>詳細: {formData.message}</p>
-      <div style={{ display: "flex", gap: "32px", flexFlow: "wrap" }}>
-        <button onClick={registerUser}>送信する</button>
-        <button onClick={onBack}>修正する</button>
+      <Headline text="Confirm" subText="お問い合わせ内容確認" />
+      <div className={styles.confirm}>
+        <p className={styles.confirmItem}>
+          名前 <span>{formData.name}</span>
+        </p>
+        <p className={styles.confirmItem}>
+          メール<span> {formData.email}</span>
+        </p>
+        <p className={styles.confirmItem}>
+          詳細 <span>{formData.message}</span>
+        </p>
+      </div>
+      <div className={styles.sendButton}>
+        <button onClick={registerUser} className={styles.buttonBase}>
+          送信する
+        </button>
+        <button
+          onClick={onBack}
+          className={`${styles.send} ${styles.buttonBase}`}
+        >
+          修正する
+        </button>
       </div>
     </>
   );
