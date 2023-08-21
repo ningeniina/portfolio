@@ -28,15 +28,13 @@ export default function Home() {
               className={`${styles.aboutColumn} ${styles.doubleColumn} ${styles.aboutText}`}
             >
               <h3>外部ツール</h3>
-              <p className={styles.topText}>
-                Figma / Github(Git) / microCMS / SendGrid
-              </p>
+              <p className={styles.topText}>Figma / Github(Git) / SendGrid</p>
             </div>
             <div className={`${styles.aboutColumn} ${styles.aboutTechnology}`}>
               <div className={styles.aboutText}>
                 <h3>使用技術</h3>
                 <p className={styles.topText}>
-                  Next.js(13.3.4) / React / TypeScript / CSS Modules
+                  Next.js(13.4.19) / React / TypeScript / CSS Modules
                 </p>
               </div>
               <div className={styles.aboutText}>
