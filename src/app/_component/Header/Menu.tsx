@@ -46,6 +46,9 @@ const Menu = () => {
           <Link href="/">Blog</Link>
         </li>*/}
         <li className={styles.menuListButton}>
+          <Link href="https://github.com/ningeniina/portfolio">Github</Link>
+        </li>
+        <li className={styles.menuListButton}>
           <Link href="/contact/">Contact</Link>
         </li>
       </ul>

@@ -19,7 +19,7 @@ export const noto = Noto_Sans_JP({
 });
 
 export const metadata = {
-  title: "人間のポートフォリオ",
+  title: "ポートフォリオ",
   description: "ポートフォリオサイトです。",
 };
 

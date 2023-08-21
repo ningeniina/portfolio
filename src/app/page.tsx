@@ -5,11 +5,7 @@ export default function Home() {
     <>
       <section className={`${styles.firstView} ${styles.topSection}`}>
         <div className={styles.firstViewTitle}>
-          <h1>
-            Ningeniina’s
-            <br />
-            Portfolio Site
-          </h1>
+          <h1>Portfolio Site</h1>
         </div>
       </section>
       <section className={`${styles.topSection} ${styles.secondAbout}`}>
