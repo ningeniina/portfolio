@@ -1,0 +1,44 @@
+.list {
+  display: flex;
+  flex-flow: column;
+  gap: 16px;
+}
+
+.card {
+  padding: 16px;
+  display: flex;
+  gap: 16px;
+  border: 2px solid var(--headLine);
+  border-radius: 16px;
+  transition: 0.2s;
+  color: var(--text);
+}
+.card:hover {
+  border-color: var(--yellow);
+  color: var(--text-hover);
+}
+.cardNumber {
+  width: 40px;
+  text-align: center;
+  font-family: var(--press), sans-serif;
+  font-size: 16px;
+}
+
+.article {
+  border: 2px solid var(--headLine);
+  padding: 32px;
+  border-radius: 32px;
+  margin-bottom: 40px;
+}
+
+.blogTitle {
+  font-family: var(--noto), sans-serif;
+  font-size: 24px;
+  line-height: 36px;
+  margin-bottom: 32px;
+}
+
+.body p {
+  font-size: 16px;
+  line-height: 24px;
+}

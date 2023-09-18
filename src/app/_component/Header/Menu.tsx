@@ -41,10 +41,10 @@ const Menu = () => {
       <ul className={`${styles.menuList} ${menuIsOpen ? styles.menuOpen : ""}`}>
         {/*<li className={styles.menuListButton}>
           <Link href="/">Profile</Link>
-  </li>
+  </li>*/}
         <li className={styles.menuListButton}>
-          <Link href="/">Blog</Link>
-        </li>*/}
+          <Link href="/blog">Blog</Link>
+        </li>
         <li className={styles.menuListButton}>
           <Link href="https://github.com/ningeniina/portfolio">Github</Link>
         </li>

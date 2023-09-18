@@ -24,7 +24,9 @@ export default function Home() {
               className={`${styles.aboutColumn} ${styles.doubleColumn} ${styles.aboutText}`}
             >
               <h3>外部ツール</h3>
-              <p className={styles.topText}>Figma / Github(Git) / SendGrid</p>
+              <p className={styles.topText}>
+                Figma / Github(Git) / microCMS / SendGrid
+              </p>
             </div>
             <div className={`${styles.aboutColumn} ${styles.aboutTechnology}`}>
               <div className={styles.aboutText}>
